@@ -13,7 +13,7 @@ function App() {
     <ContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/bigproject" element={<Login />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="sales" element={<Sales />} />
