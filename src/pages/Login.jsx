@@ -8,7 +8,7 @@ function Login() {
 
   function login() {
     {
-      navigate("/dasboard");
+      navigate("/dashboard");
     }
   }
 
