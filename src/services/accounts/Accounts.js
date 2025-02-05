@@ -1,9 +1,9 @@
 import { get, getDatabase, push, ref, set } from "firebase/database";
-import { app } from "../FirebaseConfig";
+import { app } from "../../services/FirebaseConfig";
 
 export async function createAccount(username, password, email, name) {
   const db = getDatabase(app);
-  const newDoc = push(ref(db, "users"));
+  const newDoc = push(ref(db, "products"));
   set(newDoc, {
     username: username,
     password: password,
@@ -17,6 +17,7 @@ export async function createAccount(username, password, email, name) {
 export async function getAccounts() {
   const db = getDatabase(app);
   const dbRef = ref(db, "users");
+  //ref(database,collection or table)
 
   const accounts = await get(dbRef);
   if (accounts.exists()) {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getAccounts } from "../services/accounts/Accounts";
-import { useLoginContext } from "../services/Context";
+
+import { useLoginContext } from "../contexts/AccountContext";
 
 function Users() {
   const { accounts } = useLoginContext();

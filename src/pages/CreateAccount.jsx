@@ -49,8 +49,8 @@ function CreateAccount() {
             htmlFor={username}
             className={`absolute left-4 top-3 text-gray-500 transition-all ${
               username
-                ? "top-0 text-sm text-blue-600"
-                : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:-sm peer-focus:text-blue-600"
+                ? "top-1 text-sm text-blue-600"
+                : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:-sm peer-focus:text-blue-600"
             }`}
           >
             Username

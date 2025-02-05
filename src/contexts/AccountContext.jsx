@@ -1,16 +1,20 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAccounts } from "./accounts/Accounts";
+import { getAccounts } from "../services/accounts/Accounts";
+import { getProduct } from "../services/products/Product";
 
 const loginContext = createContext();
 const initialState = {
   accounts: [],
+  products: [],
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "setAccounts":
       return { ...state, accounts: action.payload };
+    case "setProducts":
+      return { ...state, products: action.payload };
   }
 }
 
@@ -26,8 +30,18 @@ function ContextProvider({ children }) {
     fetchingData();
   }, []);
 
+  useEffect(() => {
+    async function fetchProduct() {
+      const data = await getProduct();
+      dispatch({ type: "setProducts", payload: data });
+    }
+    fetchProduct();
+  }, []);
+
   return (
-    <loginContext.Provider value={{ accounts: state.accounts }}>
+    <loginContext.Provider
+      value={{ accounts: state.accounts, products: state.products }}
+    >
       {children}
     </loginContext.Provider>
   );
