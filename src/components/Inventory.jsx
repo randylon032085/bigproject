@@ -7,9 +7,9 @@ import { UseProductContext } from "../contexts/ProductContext";
 function Inventory() {
   const [productName, setProductName] = useState();
   const [productType, setProductType] = useState();
-
   const { products } = UseProductContext();
   console.log(products);
+
   return (
     <div className="flex flex-col items-center bg-blue-300 w-[400px] mx-auto py-6 my-20 gap-3 h-[200px]">
       <Inputs
@@ -24,6 +24,7 @@ function Inventory() {
         value={productType}
         handleOnchange={setProductType}
       />
+
       <Buttons handleClick={() => CreateProducts(productName, productType)}>
         Create product
       </Buttons>

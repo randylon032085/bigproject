@@ -8,6 +8,7 @@ import Support from "./components/Support";
 import Users from "./components/Users";
 import { ContextProvider } from "./contexts/AccountContext";
 import { ProductContextProvider } from "./contexts/ProductContext";
+import Test from "./components/test";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="inventory" element={<Inventory />} />
               <Route path="support" element={<Support />} />
               <Route path="users" element={<Users />} />
+              <Route path="test" element={<Test />} />
             </Route>
           </Routes>
         </BrowserRouter>

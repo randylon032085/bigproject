@@ -7,8 +7,9 @@ import { meta } from "@eslint/js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const apiKey = import.meta.env.VITE_API_KEY;
 const firebaseConfig = {
-  apiKey: "AIzaSyCFWlM9lHkYKA_RfDAEmH0HZEBO6ryQitE",
+  apiKey: apiKey,
   authDomain: "bean-upnorth.firebaseapp.com",
   projectId: "bean-upnorth",
   storageBucket: "bean-upnorth.firebasestorage.app",

@@ -1,10 +1,19 @@
-import { get, getDatabase, push, ref, set } from "firebase/database";
+import { get, getDatabase, push, ref, set, update } from "firebase/database";
 import { app } from "../../services/FirebaseConfig";
 
+//CLIENT INFORMATION
+// CREATE
 export async function createAccount(username, password, email, name) {
   const db = getDatabase(app);
   const newDoc = push(ref(db, "products"));
+  function generatedID() {
+    //create an algo for generating random ID
+    console.log("asd");
+  }
+  const empID = "BEAN-" + generatedID;
+  //BEAN-1231231
   set(newDoc, {
+    empId: empID,
     username: username,
     password: password,
     email: email,
@@ -14,6 +23,8 @@ export async function createAccount(username, password, email, name) {
   });
 }
 
+//FOR ADMIN
+//READ
 export async function getAccounts() {
   const db = getDatabase(app);
   const dbRef = ref(db, "users");
@@ -32,8 +43,25 @@ export async function getAccounts() {
   }
 }
 
-// async function fethData(){
-//   const response = await fetch('loca');
-//   const data = await response.json();
-//   console.log(data)
-// }
+//UPDATE
+//users/3
+//const newData = {
+//username:username
+//password:password
+//}
+//const id =1;
+///updateUsers(id,newData);
+
+export async function updateUsers(userId, newData) {
+  const db = getDatabase(app);
+  const userReference = ref(db, `users/${userId}`);
+
+  try {
+    await update(userReference, newData);
+    alert("successfully updated");
+  } catch (error) {
+    console.error("Error updating user", error);
+  }
+}
+
+//DELETE
