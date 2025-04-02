@@ -22,7 +22,7 @@ export async function getProduct() {
     const productOBJ = Object.keys(productsData).map((el) => ({
       id: el,
       ...productsData[el],
-    }));
+    })); 
     return productOBJ;
   } else {
     return [];

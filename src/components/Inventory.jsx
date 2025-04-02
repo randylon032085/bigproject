@@ -18,6 +18,7 @@ function Inventory() {
         value={productName}
         handleOnchange={setProductName}
       />
+      
       <Inputs
         type="text"
         placeholder="Type of product "

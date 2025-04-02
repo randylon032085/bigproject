@@ -9,6 +9,7 @@ import Users from "./components/Users";
 import { ContextProvider } from "./contexts/AccountContext";
 import { ProductContextProvider } from "./contexts/ProductContext";
 import Test from "./components/test";
+import Cashier from "./pages/Cashier";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/createAccount" element={<CreateAccount />} />
+            <Route path="/Cashier" element={<Cashier />} />
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="sales" element={<Sales />} />
               <Route path="inventory" element={<Inventory />} />

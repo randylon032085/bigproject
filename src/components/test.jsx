@@ -14,9 +14,10 @@ function Test() {
         )}
       </p> */}
 
-      {flag && <input placeholder="Enter Someting" />}
       <button onClick={() => setFlag(!flag)} className="py-2 px-2 bg-blue-500">
-        TOGGLE
+        {flag && <>Save</>}
+
+        {flag || <>Delete</>}
       </button>
     </div>
   );
