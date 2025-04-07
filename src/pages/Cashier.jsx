@@ -60,14 +60,14 @@ function Cashier() {
     <div>
       {loading && <span>Loading....</span>}
       <>
-        <div className="flex flex-col">
+        <div className="flex bg-cover bg-amber-100 bg-fixed h-screen ">
           <h2>Cashier Dashboard</h2>
           {orders.length === 0 ? (
             "No orders display"
           ) : (
-            <div>
+            <div >
               {orders.map((el) => (
-                <div key={el.id}>
+                <div key={el.id} className="flex bg-gray-500 bg-opacity-45 h-[200px] w-[400px] rounded-md mb-2">
                   <h3>OrderId: {el.orderId}</h3>
                   <p>Status: {el.status}</p>
                   <p>Total: {el.total}</p>

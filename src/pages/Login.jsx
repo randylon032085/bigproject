@@ -27,7 +27,7 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col items-center bg-gray-600 gap-4 mx-auto w-[400px] h-[400px] my-8 rounded-md p-[100px] opacity-70">
       Login
       <input
         value={email}
